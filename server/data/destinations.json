@@ -1,0 +1,72 @@
+[
+  {
+    "destination": "London",
+    "city": "London",
+    "country": "United Kingdom",
+    "img_url": "https://picsum.photos/seed/london/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/gb.png"
+  },
+  {
+    "destination": "Edinburgh",
+    "city": "Edinburgh",
+    "country": "United Kingdom",
+    "img_url": "https://picsum.photos/seed/edinburgh/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/gb.png"
+  },
+  {
+    "destination": "Dublin",
+    "city": "Dublin",
+    "country": "Ireland",
+    "img_url": "https://picsum.photos/seed/dublin/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/ie.png"
+  },
+  {
+    "destination": "Venice",
+    "city": "Venice",
+    "country": "Italy",
+    "img_url": "https://picsum.photos/seed/venice/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/it.png"
+  },
+  {
+    "destination": "Florence",
+    "city": "Florence",
+    "country": "Italy",
+    "img_url": "https://picsum.photos/seed/florence/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/it.png"
+  },
+  {
+    "destination": "Rome",
+    "city": "Rome",
+    "country": "Italy",
+    "img_url": "https://picsum.photos/seed/rome/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/it.png"
+  },
+  {
+    "destination": "Cairo",
+    "city": "Cairo",
+    "country": "Egypt",
+    "img_url": "https://picsum.photos/seed/cairo/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/eg.png"
+  },
+  {
+    "destination": "Luxor",
+    "city": "Luxor",
+    "country": "Egypt",
+    "img_url": "https://picsum.photos/seed/luxor/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/eg.png"
+  },
+  {
+    "destination": "Quito",
+    "city": "Quito",
+    "country": "Ecuador",
+    "img_url": "https://picsum.photos/seed/quito/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/ec.png"
+  },
+  {
+    "destination": "Galapagos Islands",
+    "city": "Santa Cruz",
+    "country": "Ecuador",
+    "img_url": "https://picsum.photos/seed/galapagos/400/300",
+    "flag_img_url": "https://flagcdn.com/w320/ec.png"
+  }
+]

@@ -25,4 +25,7 @@ cd client
 npm run dev
 ```
 
-![On The Fly!](./client/src/assets/OnTheFly.mp4)
+![On The Fly!](./client/src/assets/pic1)
+![On The Fly!](./client/src/assets/pic2)
+![On The Fly!](./client/src/assets/pic3)
+![On The Fly!](./client/src/assets/pic4)

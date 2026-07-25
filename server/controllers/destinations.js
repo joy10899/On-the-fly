@@ -2,7 +2,7 @@ import { pool } from '../config/database.js'
 
 const createDestination = async (req, res) => {
     try {
-        const { destination, description, city, country, img_url, flag_img_url } = request.body
+        const { destination, description, city, country, img_url, flag_img_url } = req.body
 
         const results = await pool.query(`
             INSERT INTO destinations (destination, description, city, country, img_url, flag_img_url)
@@ -65,6 +65,7 @@ const deleteDestination = async (req, res) => {
     const id = parseInt(req.params.id)
 
     try {
+        await pool.query('DELETE FROM trips_destinations WHERE destination_id = $1', [id])
         const results = await pool.query('DELETE FROM destinations WHERE id = $1', [id])
         res.status(200).json(results.rows)
         console.log('❌ destination deleted')

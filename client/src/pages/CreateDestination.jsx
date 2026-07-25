@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import './CreateDestination.css'
 
-const CreateDestination = () => {
+const CreateDestination = ({ api_url }) => {
 
     const [destination, setDestination] = useState({destination: "", description: "", city: "", country: "", img_url: "", flag_img_url: "" })
     const {trip_id} = useParams();
@@ -30,7 +30,10 @@ const CreateDestination = () => {
                 },
                 body: JSON.stringify(destination)
             }
-            const response = await fetch('/api/destinations', options)
+            const response = await fetch(`${api_url}/api/destinations`, options)
+            if (!response.ok) {
+                throw new Error('Unable to create destination')
+            }
             const data = await response.json()
             setDestination(data)
             return data.id
@@ -45,18 +48,23 @@ const CreateDestination = () => {
                 },
                 body: JSON.stringify({trip_id: trip_id, destination_id: destination_id})
             }
-            const response = await fetch('/api/trips-destinations', options)
+            const response = await fetch(`${api_url}/api/trips-destinations`, options)
+            if (!response.ok) {
+                throw new Error('Unable to add destination to trip')
+            }
             const data = await response.json()
             return data
         }
-        addDestination().then(res => createTripDestination(res)).then(res => window.location = '/')
+        const destinationId = await addDestination()
+        await createTripDestination(destinationId)
+        window.location = '/'
 
     }
 
     return (
         <div>
             <center><h3>Add Destination</h3></center>
-            <form>
+            <form onSubmit={createDestination}>
                 <label>Destination</label> <br />
                 <input type="text" id="destination" name="destination" value={destination.destination} onChange={handleChange}/><br />
                 <br/>
@@ -83,10 +91,10 @@ const CreateDestination = () => {
                 <br/>
 
                 <label>Trip ID</label><br />
-                <input type="text" id="flag_img_url" name="flag_img_url" value={trip_id} readOnly/><br />
+                <input type="text" id="trip_id" name="trip_id" value={trip_id} readOnly/><br />
                 <br/>
 
-                <input type="submit" value="Submit" onClick={createDestination} />
+                <input type="submit" value="Submit" />
             </form>
         </div>
     )

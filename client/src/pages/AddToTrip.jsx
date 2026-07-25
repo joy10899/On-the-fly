@@ -15,12 +15,13 @@ const AddToTrip = (props) => {
         <div className="AddToTrip">
             {
                 trips && trips.length > 0 ?
-                trips.map((trip,index) => 
+                trips.map((trip) =>
                    <AddTripOptionCard key={trip.id} 
                          id={trip.id} 
                          title={trip.title} 
                          description={trip.description} 
-                         img_url={trip.img_url}  />
+                         img_url={trip.img_url}
+                         api_url={props.api_url} />
                 ) : <h3 className="noResults">{'No Trips Yet 😞'}</h3>
             }
         </div>  

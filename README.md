@@ -24,3 +24,5 @@ In another terminal, start the client:
 cd client
 npm run dev
 ```
+
+![On The Fly!](./client/src/assets/OnTheFly.mp4)

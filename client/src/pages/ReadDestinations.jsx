@@ -17,7 +17,7 @@ const ReadDestinations = (props) => {
         <div className="ReadDestinations">
             {
                 destinations && destinations.length > 0 ?
-                destinations.map((destination,index) => 
+                destinations.map((destination) =>
                    <DestinationCard key={destination.id} 
                          id={destination.id} 
                          destination={destination.destination} 

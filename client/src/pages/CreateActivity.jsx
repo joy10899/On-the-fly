@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import './CreateActivity.css'
 
-const CreateActivity = () => {
+const CreateActivity = ({ api_url }) => {
 
     const [activity, setActivity] = useState({activity: "" })
     const {trip_id} = useParams();
@@ -28,14 +28,17 @@ const CreateActivity = () => {
             },
             body: JSON.stringify(activity)
         }
-        const response = await fetch('/api/activities/' + trip_id, options)
+        const response = await fetch(`${api_url}/api/activities/${trip_id}`, options)
+        if (!response.ok) {
+            throw new Error('Unable to create activity')
+        }
         window.location.href = '/'
     }
 
     return (
         <div>
             <center><h3>Add Activity</h3></center>
-            <form>
+            <form onSubmit={createActivity}>
                 <label>Activity</label> <br />
                 <input type="text" id="activity" name="activity" value={activity.activity} onChange={handleChange}/><br />
                 <br/>
@@ -44,7 +47,7 @@ const CreateActivity = () => {
                 <input type="number" id="trip_id" name="trip_id" value={trip_id} readOnly/><br />
                 <br/>
 
-                <input type="submit" value="Submit" onClick={createActivity} />
+                <input type="submit" value="Submit" />
             </form>
         </div>
     )

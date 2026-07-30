@@ -13,7 +13,7 @@ import AddUserToTrip from './pages/AddUserToTrip';
 import Login from './pages/Login';
 import Avatar from './components/Avatar';
 
-const API_URL = import.meta.env.PROD ? 'https://server-myn0.onrender.com/' : '/api'
+const API_URL = import.meta.env.PROD ? 'https://server-myn0.onrender.com' : '/api'
 
 const App = () => {
   const [trips, setTrips] = useState([]);

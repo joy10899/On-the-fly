@@ -12,7 +12,7 @@ import userTripRoutes from './routes/users-trips.js'
 
 const app = express()
 const CLIENT_URL = process.env.CLIENT_URL || 'https://client-jl5g.onrender.com'
-
+app.set('trust proxy', 1)
 app.use(session({
     secret: process.env.SESSION_SECRET || 'codepath-development-secret',
     resave: false,

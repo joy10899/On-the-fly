@@ -20,7 +20,7 @@ app.use(session({
 }))
 app.use(express.json())
 app.use(cors({
-    origin: 'https://client-jl5g.onrender.com',
+    origin: 'CLIENT_URL',
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true
 }))

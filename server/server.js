@@ -16,7 +16,11 @@ const CLIENT_URL = process.env.CLIENT_URL || 'https://client-jl5g.onrender.com'
 app.use(session({
     secret: process.env.SESSION_SECRET || 'codepath-development-secret',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        sameSite: 'none',
+        secure: true
+    }
 }))
 app.use(express.json())
 app.use(cors({

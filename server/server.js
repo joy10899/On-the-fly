@@ -20,7 +20,7 @@ app.use(session({
 }))
 app.use(express.json())
 app.use(cors({
-    origin: 'CLIENT_URL',
+    origin: CLIENT_URL,
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true
 }))

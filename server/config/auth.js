@@ -5,7 +5,7 @@ import {pool} from '../config/database.js'
 const options = {
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: `${process.env.API_URL || 'http://localhost:3001'}/auth/github/callback`
+    callbackURL: `${process.env.API_URL || 'https://server-myn0.onrender.com/'}/auth/github/callback`
 }
 
 

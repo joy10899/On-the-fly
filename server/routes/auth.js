@@ -41,8 +41,8 @@ router.get(
 router.get(
 '/github/callback',
 passport.authenticate('github', {
-    successRedirect: `${process.env.CLIENT_URL || 'http://localhost:5173'}/`,
-    failureRedirect: `${process.env.CLIENT_URL || 'http://localhost:5173'}/`,
+    successRedirect: `${process.env.CLIENT_URL || 'https://client-jl5g.onrender.com'}/`,
+    failureRedirect: `${process.env.CLIENT_URL || 'https://client-jl5g.onrender.com'}/destinations`,
 })
 )
 

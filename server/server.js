@@ -11,7 +11,7 @@ import authRoutes from './routes/auth.js'
 import userTripRoutes from './routes/users-trips.js'
 
 const app = express()
-const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173'
+const CLIENT_URL = process.env.CLIENT_URL || 'https://client-jl5g.onrender.com'
 
 app.use(session({
     secret: process.env.SESSION_SECRET || 'codepath-development-secret',
@@ -20,7 +20,7 @@ app.use(session({
 }))
 app.use(express.json())
 app.use(cors({
-    origin: CLIENT_URL,
+    origin: 'https://client-jl5g.onrender.com',
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true
 }))
